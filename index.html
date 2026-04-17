@@ -7,164 +7,230 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="100">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="main-nav">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <span class="preloader-logo">MK</span>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (desktop only) -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="main-nav">
         <div class="container">
             <a class="navbar-brand" href="#">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#hero">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="hero" class="d-flex align-items-center text-center">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <img src="https://i.ibb.co/RkB2wqdS/img1.jpg" class="profile-img rounded-circle border border-5 border-white shadow-lg">
+    <!-- ==================== HERO ==================== -->
+    <header id="hero">
+        <div class="container hero-container">
+            <div class="row align-items-center justify-content-center g-4">
+
+                <!-- Image -->
+                <div class="col-12 col-md-5 col-lg-4 text-center" data-aos="fade-right" data-aos-duration="900">
+                    <img src="https://cdn.phototourl.com/free/2026-04-11-87124f36-860f-4e40-8592-d27e6877b9e6.jpg"
+                         class="profile-img rounded-circle glow-img" alt="ManiKanta">
                 </div>
-                <div class="col-12 col-md-10 col-lg-6 text-md-start text-center">
-                    <span class="d-block mb-2 text-muted fw-bold">Hello, I'm</span>
-                    <h1 class="display-2 fw-bold text-dark">Kona Veera ManiKanta</h1>
-                    <p class="lead mb-4 text-secondary">A 
-                        <span class="name">FullStack-Developer </span>
+
+                <!-- Text -->
+                <div class="col-12 col-md-7 col-lg-6 hero-text" data-aos="fade-left" data-aos-duration="900">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <h1 class="hero-name">Kona Veera<br>ManiKanta</h1>
+                    <p class="hero-lead">A <span class="name" id="typed-text"></span><br class="d-none d-sm-block">
                         dedicated to building beautiful and scalable web applications.</p>
-                    <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
-                    <a href="#contact" class="btn btn-outline-secondary btn-lg">Get in Touch</a>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-secondary btn-lg">Get in Touch</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-5">
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section-pad">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="section-title text-center">About Me</h2>
+            <h2 class="section-title text-center" data-aos="fade-up">About Me</h2>
+            <div class="row align-items-center g-4 mt-2">
+
+                <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="800">
                     <p class="lead text-muted">
-                        I am  
-                        <span class="name">Kona Veera Manikanta</span> 
-                        a motivated student currently pursuing a B.Tech in Artificial Intelligence and Data Science at Swarnandhra College of Engineering and Technology.
+                        I am <span class="name">Kona Veera Manikanta</span>, a motivated student currently pursuing
+                        a B.Tech in Artificial Intelligence and Data Science at Swarnandhra College of Engineering and Technology.
                     </p>
                     <p class="text-muted">
-                        My academic and projects experience across the full-stack development lifecycle, I have worked on everything from designing intuitive, user-friendly interfaces to building scalable and robust back-end systems. I am passionate about learning emerging technologies, solving real-world problems, and continuously improving my skills to deliver impactful results.
+                        My academic and project experience spans the full-stack development lifecycle — from designing
+                        intuitive interfaces to building scalable back-end systems. I am passionate about learning
+                        emerging technologies, solving real-world problems, and continuously improving my skills.
                     </p>
                     <p class="text-muted">
-                        As a fresher, I am eager to contribute my knowledge, adapt quickly to new challenges, and collaborate effectively within teams to drive innovation and success.
+                        As a fresher, I am eager to contribute my knowledge, adapt quickly to new challenges, and
+                        collaborate effectively within teams to drive innovation and success.
                     </p>
-                    <a href="https://drive.google.com/file/d/120HjO8uUwiaT2RLBP7J8XnOxplkpo2iQ/view?usp=sharing" class="btn btn-primary mt-3">Download CV</a>
+                    <a href="https://drive.google.com/file/d/1-OJoJ0x7Xh4MCBYL73OtxoT8IsGHF3eb/view?usp=sharing" class="btn btn-primary mt-3">
+                        <i class="fas fa-download me-2"></i>Download CV
+                    </a>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="about-img-container">
-                        <img src="https://i.ibb.co/4whcjTQG/nnnn.jpg" class="img-fluid rounded shadow-lg">
+
+                <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <div class="about-img-wrap">
+                        <img src="https://cdn.phototourl.com/free/2026-04-11-7bb302b3-be75-419d-bc7e-9f0d787f5bea.jpg"
+                             class="img-fluid rounded-3 shadow-lg about-img" alt="About ManiKanta">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-5 bg-light-gray">
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section-pad skills-bg">
         <div class="container">
-            <h2 class="section-title text-center">My Skills</h2>
-            <div class="row text-center g-4 mt-4">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-html5 fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">HTML5</h6>
+            <h2 class="section-title text-center" data-aos="fade-up">My Skills</h2>
+
+            <!--
+                GRID BREAKDOWN:
+                Mobile  (< 576px) : col-4  → 3 per row
+                Tablet  (≥ 576px) : col-sm-3 → 4 per row
+                Laptop  (≥ 992px) : col-lg-2 → 6 per row
+            -->
+            <div class="row text-center g-3 g-md-4 mt-3 skills-grid">
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="skill-card">
+                        <i class="fab fa-html5 skill-icon" style="color:#e34f26;"></i>
+                        <span class="skill-label">HTML5</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-css3-alt fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">CSS</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt skill-icon" style="color:#1572b6;"></i>
+                        <span class="skill-label">CSS3</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-js fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">JavaScript</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="skill-card">
+                        <i class="fab fa-js skill-icon" style="color:#f7df1e; -webkit-text-stroke:1px #aaa;"></i>
+                        <span class="skill-label">JavaScript</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-react fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">React</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-card">
+                        <i class="fab fa-react skill-icon" style="color:#61dafb;"></i>
+                        <span class="skill-label">React</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-node-js fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Node.js</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="skill-card">
+                        <i class="fab fa-node-js skill-icon" style="color:#339933;"></i>
+                        <span class="skill-label">Node.js</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-python fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Python</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-card">
+                        <i class="fab fa-python skill-icon" style="color:#3776ab;"></i>
+                        <span class="skill-label">Python</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-bootstrap fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Bootstrap</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="skill-card">
+                        <i class="fab fa-bootstrap skill-icon" style="color:#7952b3;"></i>
+                        <span class="skill-label">Bootstrap</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-git-alt fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Git</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="skill-card">
+                        <i class="fab fa-git-alt skill-icon" style="color:#f05032;"></i>
+                        <span class="skill-label">Git</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fas fa-database fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Databases</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="skill-card">
+                        <i class="fas fa-database skill-icon" style="color:#36a49c;"></i>
+                        <span class="skill-label">Databases</span>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="skill-card card h-100 p-3">
-                        <i class="fab fa-aws fa-3x mb-2 text-primary"></i>
-                        <h6 class="fw-bold">Cloud (AWS)</h6>
+
+                <div class="col-4 col-sm-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="skill-card">
+                        <i class="fab fa-aws skill-icon" style="color:#ff9900;"></i>
+                        <span class="skill-label">AWS</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section-pad">
         <div class="container">
-            <h2 class="section-title text-center">Featured Projects</h2>
-            <div class="row g-4 mt-4">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Project 1">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-primary">E-commerce Platform</h5>
-                            <p class="card-text text-muted">A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and real-time inventory management.</p>
+            <h2 class="section-title text-center" data-aos="fade-up">Featured Projects</h2>
+
+            <!--
+                GRID BREAKDOWN:
+                Mobile  (< 768px) : col-12    → 1 per row  (full width, easy to read)
+                Tablet  (≥ 768px) : col-md-6  → 2 per row
+                Laptop  (≥ 992px) : col-lg-4  → 3 per row
+            -->
+            <div class="row g-4 mt-3">
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-wrap">
+                            <img src="https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+                                 class="project-img" alt="E-commerce">
+                            <div class="project-overlay">
+                                <a href="https://github.com/Manikantakona0/EliteStore-Modern-E-commerce-Web-Application"
+                                   class="overlay-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Project
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h5 class="project-title">E-commerce Platform</h5>
+                            <p class="project-desc">A full-stack e-commerce solution built with React, Node.js, and MongoDB.
+                               Features include user authentication, payment integration, and real-time inventory management.</p>
                             <div class="project-tags">
                                 <span class="project-tag">React</span>
                                 <span class="project-tag">Node.js</span>
@@ -172,19 +238,33 @@
                                 <span class="project-tag">CSS</span>
                                 <span class="project-tag">JS</span>
                             </div>
-                            <div class="mt-3 d-flex justify-content-between">
-                                <a href=" https://manikantakona0.github.io/Ecommerce-web-Application/" class="btn btn-primary btn-sm">Live Demo</a>
-                                <a href="https://github.com/Manikantakona0" class="btn btn-outline-secondary btn-sm">GitHub <i class="fab fa-github ms-1"></i></a>
+                            <div class="project-links">
+                                <a href=" https://manikantakona0.github.io/EliteStore-Modern-E-commerce-Web-Application/"
+                                   class="btn btn-primary btn-sm" target="_blank">Live Demo</a>
+                                <a href="https://github.com/Manikantakona0/EliteStore-Modern-E-commerce-Web-Application"
+                                   class="btn btn-outline-secondary btn-sm" target="_blank">
+                                    GitHub <i class="fab fa-github ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=600"" class="card-img-top" alt="Project 2">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-primary">Wikipedia web Application</h5>
-                            <p class="card-text text-muted">Unlock the vast wealth of knowledge on Wikipedia with a custom search application that delivers relevant and curated results. Quick and easy access to information has never been easier.</p>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-wrap">
+                            <img src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                 class="project-img" alt="Wikipedia App">
+                            <div class="project-overlay">
+                                <a href="https://github.com/Manikantakona0/Smart-Loan-Approval-System" class="overlay-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Project
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h5 class="project-title">Smart-Loan-Approval-System</h5>
+                            <p class="project-desc">A responsive web application that evaluates loan eligibility using AI-inspired risk assessment logic. Features dynamic form validation,
+                                 real-time decision analysis, EMI calculation, and interactive dashboards with animated data visualizations.</p>
                             <div class="project-tags">
                                 <span class="project-tag">React</span>
                                 <span class="project-tag">Node.js</span>
@@ -193,74 +273,122 @@
                                 <span class="project-tag">JS</span>
                                 <span class="project-tag">API Calls</span>
                             </div>
-                            <div class="mt-3 d-flex justify-content-between">
-                                <a href="https://wikipediademos.ccbp.tech/" class="btn btn-primary btn-sm">Live Demo</a>
-                                <a href="https://github.com/Manikantakona0" class="btn btn-outline-secondary btn-sm">GitHub <i class="fab fa-github ms-1"></i></a>
+                            <div class="project-links">
+                                <a href=" https://manikantakona0.github.io/Smart-Loan-Approval-System/"
+                                   class="btn btn-primary btn-sm" target="_blank">Live Demo</a>
+                                <a href="https://github.com/Manikantakona0/Smart-Loan-Approval-System"
+                                   class="btn btn-outline-secondary btn-sm" target="_blank">
+                                    GitHub <i class="fab fa-github ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Project 3">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-primary">More Projects Coming Soon</h5>
-                            <p class="card-text text-muted">Currently working on exciting new projects that showcase advanced web development techniques and modern frameworks.</p>
-                            <div class="mt-auto d-flex justify-content-between">
-    
-                                <a href="https://github.com/Manikantakona0" class="btn btn-outline-secondary btn-sm">GitHub <i class="fab fa-github ms-1"></i></a>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-wrap">
+                            <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                 class="project-img" alt="Coming Soon">
+                            <div class="project-overlay">
+                                <span class="overlay-btn no-link">
+                                    <i class="fas fa-code me-2"></i>In Progress
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h5 class="project-title">More Projects Coming Soon</h5>
+                            <p class="project-desc">Currently working on exciting new projects that showcase advanced
+                               web development techniques and modern frameworks.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Coming Soon</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Manikantakona0"
+                                   class="btn btn-outline-secondary btn-sm" target="_blank">
+                                    GitHub <i class="fab fa-github ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-5 bg-light-gray">
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section-pad skills-bg">
         <div class="container">
-            <h2 class="section-title text-center">Get in Touch</h2>
-            <div class="row justify-content-center mt-4">
-                <div class="col-12 col-md-8 col-lg-6">
+            <h2 class="section-title text-center" data-aos="fade-up">Get in Touch</h2>
+            <div class="row justify-content-center mt-2">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <p class="text-center mb-4 text-muted">
-                        I'm currently open for new opportunities and collaborations. Feel free to reach out to me!
+                        I'm currently open for new opportunities and collaborations. Feel free to reach out!
                     </p>
-                    <form id="contact-form">
+                    <form id="contact-form" novalidate>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <input type="text" class="form-control contact-input" id="name"
+                                   placeholder="Your Name" required>
+                            <div class="invalid-feedback">Please enter your name.</div>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                            <input type="email" class="form-control contact-input" id="email"
+                                   placeholder="Email address" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control contact-input" id="message"
+                                      rows="5" placeholder="Your Message" required></textarea>
+                            <div class="invalid-feedback">Please enter your message.</div>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
-    <footer class="py-4 bg-white text-muted text-center border-top">
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
         <div class="container">
-            <p class="mb-1">&copy; 2025 Kona Veera Manikanta. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/manikanta-kona-9b17552ab/" class="text-muted mx-2" ><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://github.com/Manikantakona0" class="text-muted mx-2"><i class="fab fa-github fa-2x"></i></a>
-                <a href="https://x.com/manikanta185224" class="text-muted mx-2"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="manikantakona2004@gmail.com" class="text-muted mx-2"><i class="fas fa-envelope fa-2x"></i></a>
+            <div class="social-icons mb-3">
+                <a href="https://www.linkedin.com/in/manikanta-kona-9b17552ab/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Manikantakona0" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/manikanta185224" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:manikantakona2004@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
+            <p class="footer-copy">Made with  by
+                <span class="name">ManiKanta</span> &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p>
         </div>
     </footer>
-     
+
+    <!-- Back to Top -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Toast -->
+    <div id="toast-notification">
+        <i class="fas fa-check-circle me-2"></i>Message sent! I'll get back to you soon 🚀
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
